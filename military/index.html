@@ -303,7 +303,10 @@ main { padding: 0 10px; }
 .tabs { display: inline-flex; border: 2px solid var(--ink); border-radius: 8px; overflow: hidden; margin-bottom: 28px; }
 .tab { font: 600 1rem/1 var(--sans); cursor: pointer; background: transparent; color: var(--ink); border: 0; padding: 14px 24px; min-height: 48px; }
 .tab + .tab { border-left: 2px solid var(--ink); }
-.tab[aria-selected="true"] { background: var(--ink); color: #A19F9F; }
+.tab[aria-selected="true"] { background: #1A74AE; color: #FFFFFF; }
+.tab[aria-selected="false"] { color: var(--ink); opacity: 0.85; }
+.tab[aria-selected="false"]:hover { opacity: 1; background: rgba(26, 116, 174, 0.15); }
+.tab:focus-visible { outline: 3px solid #E2762B; outline-offset: -3px; }
 .panel[hidden] { display: none; }
 .panel p.intro { font-size: 1.15rem; max-width: 56ch; margin-bottom: 24px; }
 .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; max-width: 720px; }
