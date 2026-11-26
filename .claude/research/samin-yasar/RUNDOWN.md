@@ -96,3 +96,10 @@ They use other tools or are off-niche.
 See `HERMES-PLAYBOOK.md`: setup, profiles, Telegram topics, cron jobs, /goal, an 11-build map for
 real estate and NJSD Capital, ready-to-paste prompts, guardrails, and his offer and price menu.
 Full transcripts: `8yE6G1Lup1s-hermes-full-course-transcript.txt`, `uED-1uD563Y-hermes-8-use-cases-transcript.txt`.
+
+## Update: official Motion Graphics Pack received (2026-11-26)
+- `.claude/skills/motion-ads/` is now Samin's **official** skill (also public at github.com/Samin12/claude-ads-skill):
+  SKILL.md, 10 reference guides, 14 scripts (render, frame review, joins, sound make/mix/master, credit log), templates and examples.
+  My local add-on is `references/real-estate.md`.
+- Pack docs are in `motion-graphics-pack/`: the 11-page Guide PDF, COPY-PASTE-PROMPTS.txt (prompts 0 to 3.x), START-HERE, SETUP (Higgsfield models and credit costs), INSTALL, credit log template, LINKS.
+- Higgsfield costs from his build: Level 2 example about 15 credits; Level 3 example about 790 credits (about 330 in the final cut). A 4K upscale is about 150 credits per 20 s.

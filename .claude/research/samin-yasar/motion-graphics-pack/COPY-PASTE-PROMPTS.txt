@@ -1,0 +1,218 @@
+CLAUDE MOTION GRAPHICS PACK: COPY-AND-PASTE PROMPTS
+From the video: https://youtu.be/03aOyIKmQak
+Replace anything in [square brackets] with your own product, footage and numbers.
+
+======================================================================
+0. Start here
+The quickest way in. Put your logo, product photos and screenshots in a folder, open Claude Code there, and paste.
+----------------------------------------------------------------------
+Use the motion-ads skill. I want a 15-second ad for the product in this folder.
+Start with Level 1 (code only). Sort my assets, tell me if anything is missing or too low-resolution,
+then give me a numbered storyboard and stop so I can approve it.
+
+======================================================================
+1.1 Assets
+Level 1, step 1. Make a folder, open Claude Code in it, and paste. Swap in your own product.
+----------------------------------------------------------------------
+I want to make a product ad for [your product, in one line]. Use the motion-ads skill. This is Level 1: code only, no image or video generators.
+First get the real ingredients into assets/: the real logo as a vector file, real photos of the product, and its real [screens / interface / packaging], from [your website]. Check the resolution of everything. Don't draw the logo from memory. List every source in assets/SOURCES.md.
+
+======================================================================
+1.2 Storyboard
+Level 1, step 2. This is where you direct it. Approve it or ask for changes before any code runs.
+----------------------------------------------------------------------
+Now give me a numbered storyboard, 6 to 8 shots, 12 to 18 seconds, and stop so I can approve it.
+Direction: the product turns in 3D on [a desk], one continuous camera, no cuts. [What changes: its screen goes from A to B to C.] Each one has to transform into the next one, no cross-dissolves, so ask yourself how this shape can turn into that shape. Use the real [screens] pixel for pixel. Keep the action in the dead centre of the frame. Shallow depth of field: the subject stays sharp at every angle and everything behind it is blurry. One key light. It should feel like an Apple ad. End with [the logo forming], the product centred, and "[your web address]" under it. No voiceover, and no on-screen text except the web address.
+
+======================================================================
+1.3 Build
+Level 1, step 3. In my build, from the approved storyboard to the finished 4K picture took about 15 minutes.
+----------------------------------------------------------------------
+Approved. Build it as code with three.js, exactly as the storyboard says. Use the real [screens] pixel for pixel and the real logo file. Model the product from the product photos and compare it against them. Check it frame by frame with a contact sheet and fix what looks wrong before you show me. Do a quick 1080p draft first, then render it in 4K.
+
+======================================================================
+1.4 Notes (examples)
+The kind of notes that fixed my build. Give notes like a director: what looks wrong, and what you want instead.
+----------------------------------------------------------------------
+Round 1: The background blur looks smeared sideways, it should be round and soft. And the whole thing is too yellow. Make the desk a pale wood, the wall off-white and the light more neutral.
+
+Round 2: When the pixels move they turn into dust. Make neighbouring pixels leave together and take the same path, so the shapes stretch and flow.
+
+Round 3: The opening is too fast, let the close-up last longer. The camera does most of its turning in the first five seconds, spread it out so it keeps turning.
+
+======================================================================
+1.5 Sound
+Level 1, step 4. Every sound is made by code. You can also drop your own music or effects into the folder.
+----------------------------------------------------------------------
+The picture is approved. Add sound design that matches each motion: something for the opening pull-back, something for each transform, and a lift into the logo. Only make a sound where something visibly moves. No voiceover. Make the sounds with code, nothing paid. A very subtle music bed is fine if you can make it yourself.
+
+======================================================================
+1.6 The before/after (optional)
+To see why Tip 3 matters, have Claude make the cheap version next to the real one.
+----------------------------------------------------------------------
+For a side-by-side, make a flat cross-dissolve version of two of the shots, 8 seconds at most: one simply fading into the other. Save it as compare-crossdissolve.mp4. Also cut the same stretch out of the real ad so the two line up.
+
+======================================================================
+2.1 Sort the footage
+Level 2. Connect Higgsfield first (page 5 of the guide). Put all your footage in one folder, open Claude Code there, and paste.
+----------------------------------------------------------------------
+Use the motion-ads skill. This is Level 2: real footage. Everything I have is in this folder. Watch all of it first: one frame per second, then closer on the best moments, and transcribe the audio. Sort and categorize what's here, tell me what the strongest moments are, and note any burned-in text or logos. Don't cut anything yet.
+
+======================================================================
+2.2 The brief
+The brief that made my 27-second promo. Change the lengths and the number to your own footage.
+----------------------------------------------------------------------
+Cut this [104 s] recap down to a tight 20 to 30 second promo: the best moments, on the beat. Show me the cut list as a numbered storyboard and stop so I can approve it. Remove burned-in text where it clashes. Add code-built motion graphics in the footage's own look: a title that builds itself, words that slide up in place (no bouncing), a counter for [a real number from the footage], lower thirds, a clean end card. Motion graphics must transform into the footage, no cross-dissolves, and the opening goes from pure animation into real footage. Write a voiceover that fits the cut at about 2.3 words per second using only facts that are in the footage. Make it in Higgsfield, make a music bed at the exact length, and mix it. My budget is [100] Higgsfield credits: quote every job first and log what you spend.
+
+======================================================================
+2.3 Text rule
+Tip 8. Paste this any time Claude animates text.
+----------------------------------------------------------------------
+For all on-screen text: no bouncing, no scale pops and no letters fading in. Each word slides up in place inside a mask, one after the other, from blurred to sharp.
+
+======================================================================
+2.4 Voiceover
+What I used: ElevenLabs v4 on Higgsfield, four voices to compare, one take.
+----------------------------------------------------------------------
+Write the voiceover as one take, a blank line between lines, numbers spelled the way they are said. Use only facts that are in the footage. Generate it with elevenlabs_v4 on Higgsfield in four different preset voices (stability 0.5, similarity 0.8) so I can pick one. Then transcribe each take and check it reads the script correctly.
+
+======================================================================
+2.5 Music
+The music prompt from my promo (ElevenLabs Music v2.5, exact length, instrumental, two takes). Write the structure second by second.
+----------------------------------------------------------------------
+Premium cinematic electronic event promo score, exactly 27 seconds, 120 BPM, instrumental, no vocals. Modern, optimistic, polished, future-facing: warm analog synth pads, glassy plucked arpeggio, deep sub bass, tight punchy kick, crisp claps, shimmering risers. Structure: 0-4 s airy intro with soft pads and a rising shimmer; 4-13 s pulse enters, kick on every beat, arpeggio builds energy; 13.5 s a lift with a short riser and impact; 14-21 s full driving groove, confident and celebratory; 21-23 s big swell into one final cinematic impact hit at 23 s; 23-27 s warm resolving pad tail and gentle reverb fade to silence. Clean mix with space left for a voiceover.
+
+======================================================================
+2.6 Mix
+The last step: Claude places the tracks and turns the music up and down under the voice.
+----------------------------------------------------------------------
+Place each voiceover line on its shot. Put the music under it and duck it about 8 dB under the voice. Add quiet sound effects only where something visibly moves. Master it to -14 LUFS for YouTube, then tell me what you measured and what you couldn't check.
+
+======================================================================
+Copy a style (Tip 9)
+Put a video you like in the folder as a private reference. Claude takes it apart and writes the prompt. You take the style, never the footage, logo, music or words.
+----------------------------------------------------------------------
+Use the motion-ads skill. Reverse-engineer the style of the video in refs/. Study it shot by shot, then write me a prompt I can use to make a video in this style for [my product]. Describe the light, the angles, the camera moves, the pace, the joins between shots and the sound. Leave out everything that belongs to the reference: its product, its brand, its footage, its words, its music. Show me the prompt before you use it.
+
+======================================================================
+Meta-prompting (Tip 10)
+Get Claude to write the prompt for Claude. You review it and change what you want. That prompt becomes the point of reference for every still and shot.
+----------------------------------------------------------------------
+Use the motion-ads skill. This is Level 3: a photoreal ad for the product in this folder. The real photos are in refs/. Before you generate anything, write the full prompt for this ad yourself: the product described from its real photos, the look (where it is, one light and where it sits, the lens, depth of field, grain), the camera move shot by shot, how each shot becomes the next, the pace, the sound, the end frame, and what must not appear. Show it to me and stop. I'll edit it, then you give me a numbered storyboard to approve. My budget is [800] Higgsfield credits: quote every job first and log what you spend.
+
+======================================================================
+3.1 The PRODUCT block
+Written once, from the real photos, and pasted into every still prompt so the product is described in the same words every time.
+----------------------------------------------------------------------
+THE PRODUCT (must match the reference photos exactly, they are real photos of it): [what it is, in one line: a luxury steel product]. [Main material and finish: brushed steel body with polished edges]. [Second material: a black ceramic ring that stays deep glossy black]. [Every piece of printed or engraved text, in reading order, with its colour and position]. [Each part, left to right or clockwise, with its markings]. [Controls and buttons: how many, where]. [Moving parts and the position they are set to]. NO [things the model tends to add] anywhere.
+
+======================================================================
+3.2 The LOOK block
+Where it is, the one key light, the camera. Also pasted into every still prompt.
+----------------------------------------------------------------------
+WHERE IT IS: [in a hand / on a stone surface]. [Skin tone, sleeve or surface material and colour]. Everything behind is black.
+
+LIGHT: one hard key light only, a narrow strip light high on the upper left and slightly behind the product. No fill light, no second light, no rim light. Shadows fall to pure black. The highlight on [the dark glossy part] is one thin clean line, never a wide grey wash. Polished steel shows crisp speculars; brushed steel shows fine grain.
+
+CAMERA: 100mm macro lens, shallow depth of field, fine film grain, high-end commercial. Real photography, not a 3D render. No added text, no watermark, no logos other than what is on the product itself.
+
+======================================================================
+3.3 The hero keyframe
+Made first, on Nano Banana Pro at 4K with the real photos attached. Every later still gets this one as reference image 1.
+----------------------------------------------------------------------
+Photoreal macro photograph for a luxury product commercial. 16:9.
+
+FRAMING (keyframe K3, the hero): the camera looks at [the face of the product] from a low three-quarter angle, about 35 degrees off straight-on, from the lower left. [The face] fills the frame and its centre is at the centre of the frame. The left edge falls into shadow and soft focus. [Side controls] are visible at the right edge, slightly soft. All [printed text and details] are tack sharp. [The moving part] is at [its starting position].
+
+[PRODUCT block]
+
+[LOOK block]
+
+======================================================================
+3.4 Same crop, one change
+"Same crop, one change only" is what made the stills line up from one keyframe to the next.
+----------------------------------------------------------------------
+Photoreal macro photograph for a luxury product commercial. 16:9. Reference image 1 is an approved frame from this same shoot: keep exactly the same product, the same single key light, the same colour grade. The other reference images are real photos of the product: copy its details from them.
+
+FRAMING (keyframe K2): exactly the same framing, angle and crop as reference image 1. Do not zoom out. Do not show any more of the product than reference image 1 shows. ONE CHANGE ONLY: [a fingertip has come in from the top right corner and is pressing the upper button straight in]. It touches only that part and covers no text. Background black.
+
+[PRODUCT block]
+
+[LOOK block]
+
+======================================================================
+3.5 A one-change edit
+Short on purpose, with no blocks. Long prompts make the image model recompose the whole picture.
+----------------------------------------------------------------------
+Edit the reference image. Keep everything exactly as it is: same framing, same crop, same light, same text, same parts. Change ONE thing only: [the part, described so it can't be confused with another]. [Move or rotate it to the new position, described against fixed landmarks]. Remove it from its old position. It casts a soft thin shadow. Photoreal macro photograph, same grain and sharpness as the original.
+
+======================================================================
+3.6 The video RULES block
+Pasted under every video shot prompt. Each shot is made on Kling 4.0 from a start image and an end image, 5 seconds, 1080p, sound off.
+----------------------------------------------------------------------
+RULES FOR THE WHOLE SHOT: one continuous macro camera move, no cuts, no dissolves, no zoom reversal. Real photography look: 100mm macro lens, shallow depth of field, fine film grain. One hard key light from the upper left only, black background, shadows fall to black; the highlight slides along the polished steel as the camera moves. The product is rigid: its shape and its engraved and printed text never change, never warp, never flicker and never re-draw. No new text, no extra parts appear. Silent.
+
+======================================================================
+3.7 A shot: slide along the product
+Both keyframes at the same scale, so the camera only slides.
+----------------------------------------------------------------------
+Luxury product commercial, extreme macro shot of [the part] of a luxury steel product [where it is].
+
+SHOT 1: the camera slides sideways along [the part], staying just as close as it starts. It begins on [detail A], follows [the curve / the edge] past [detail B], and ends on [detail C]. [The part] stays in the centre of the frame and in sharp focus the whole way. A thin highlight runs along it just ahead of the camera.
+
+FOCUS: the depth of field is razor thin and sits on [the part] only. What is behind it is a soft out-of-focus blur for the whole shot. NO PRINTED WORDS ARE EVER READABLE in the background in this shot. Do not invent any lettering.
+
+NOTHING ON THE PRODUCT MOVES.
+
+[RULES block]
+
+======================================================================
+3.8 A shot: push in, one moving part
+Say the one thing that moves, and say that everything else stays put.
+----------------------------------------------------------------------
+Luxury product commercial, macro shot of a luxury steel product [where it is].
+
+SHOT 4: the camera starts square on [the whole face] and pushes in smoothly towards [the lower right], ending in a tight macro on [detail].
+
+THE ONLY THING ON THE PRODUCT THAT MOVES is [the moving part]: it [sweeps smoothly from position A to position B], with a soft thin shadow. [Every other part] stays exactly where it is.
+
+[RULES block]
+
+======================================================================
+3.9 A shot: pull back to the end frame
+The last shot. It ends on the frame you will join yourself to.
+----------------------------------------------------------------------
+Luxury product commercial, macro shot of a luxury steel product [where it is].
+
+SHOT 6: the camera starts with [the product's face] filling the frame and pulls straight back, revealing [the hand, the sleeve, the forearm]. It ends as a still, composed medium close-up with the product in the exact centre of the frame. The pull back is fast at first, then very slow for the last two seconds. [The arm] barely moves, only a natural breath.
+
+The product stays exactly the product of the first frame while it gets smaller: [its colours, named]. Nothing on it is ever [the wrong colours]. Do not redraw or change its printing. The face is never in the frame.
+
+[RULES block]
+
+======================================================================
+3.10 Blend yourself in (Tip 11)
+Start frame: the ad's last frame. End frame: a still from your own camera, in the same clothes. Kling 4.0, about 4 seconds. Only do this with your own face.
+----------------------------------------------------------------------
+One continuous camera move, no cuts. Start: [the ad's last frame, described: extreme close-up of the product in a hand, dark moody studio light]. The camera smoothly pulls back and rises: the dark background turns out to be [your dark top], the lights warm up, and we reveal [you] sitting in [your real room, described from your end still]. They settle into a calm, direct look at the camera. Smooth cinematic dolly-out, natural motion, realistic, stable face, no text, no morphing objects.
+
+======================================================================
+3.11 Music (music leads)
+ElevenLabs Music v2.5 on Higgsfield, exact length, instrumental. Write the structure second by second and say what it must not have.
+----------------------------------------------------------------------
+Intimate, refined neoclassical score for a dark luxury product commercial. Exactly 20 seconds, instrumental only. Warm close-miked felt piano and chamber strings with solo cello. 0 to 5 seconds: hushed, poised opening, a single sustained note and two sparse piano notes, leaving breathing room at 5 seconds. 5 to 12 seconds: the music gently awakens with a steady understated pulse and low strings rising. 12 to 16.5 seconds: an unhurried crescendo, building in one unbroken line, do not peak early. At 16.75 seconds: it resolves into one open, luminous chord, no trailer boom or harsh percussion, followed by a natural decay to near-silence by 19.5 seconds and complete silence at 20 seconds. Expensive, timeless, acoustic, no drums, no synths, no vocals.
+
+======================================================================
+3.12 Sound effects
+Mirelo text to audio on Higgsfield, 2 to 10 seconds each. Describe the object, how close the microphone is and the room, and say what it is not.
+----------------------------------------------------------------------
+A press: Extreme close-up macro foley recording of [a precision machined steel button on the product] being pressed and released. Crisp, solid, two-part mechanical click: a firm snap on press, followed immediately by a slightly softer spring release. Dry studio recording, ultra-clean, no music, no voice, no background noise.
+
+Cloth and air for a pull-back: Very soft, understated studio foley of [a knit sleeve] and gentle quiet air movement as [a hand] shifts calmly in a dark soundstage. Barely audible. NOT a sci-fi whoosh, no bass hit, no wind roar, no music, no voice.
+
+Room tone: Continuous steady dark low-frequency ambient room air tone, very soft, empty quiet room, completely flat and uninterrupted for 10 seconds.
+
+======================================================================
+Credit log (paste before any paid job)
+----------------------------------------------------------------------
+My budget for this build is [800] Higgsfield credits. Before every paid job, quote the cost and check it against the budget. Keep a log in credits.md: the time, the model and settings, which prompt file, the quote, the job ID, what was actually charged, the running total, and a one-line verdict (kept, or rejected and why). After the first job on any model, compare the quote with my account transactions. Stop and ask me before going over budget.
