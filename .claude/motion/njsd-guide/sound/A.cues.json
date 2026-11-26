@@ -4,26 +4,26 @@
   "file": "kit/pad.wav",
   "gain_db": 0,
   "fade_in": 0.8,
-  "fade_out": 3.2,
+  "fade_out": 2.0,
   "levels": [
    [
     0,
     -3
    ],
    [
-    "cover.open",
-    0
+    "write.start",
+    -4
    ],
    [
     "logo.reveal",
     2
    ],
    [
-    13.4,
+    19.599999999999998,
     2
    ],
    [
-    15.1,
+    21.3,
     -40
    ]
   ]
@@ -32,7 +32,7 @@
   {
    "file": "kit/room.wav",
    "at": 0,
-   "until": 15.4,
+   "until": 21.619999999999997,
    "gain_db": -30,
    "fade_in": 0.4,
    "fade_out": 1.8
@@ -63,8 +63,7 @@
   {
    "file": "kit/grain-rustle-1.wav",
    "at": "cover.grow",
-   "gain_db": -17,
-   "speed": 0.95
+   "gain_db": -17
   },
   {
    "file": "kit/tick.wav",
@@ -73,24 +72,22 @@
    "gain_db": -20
   },
   {
-   "file": "kit/grain-rustle-2.wav",
+   "file": "kit2/grain-rustle-1.wav",
    "at": "cover.open",
    "gain_db": -14,
    "low_cut": 120,
    "high_cut": 5000
   },
   {
-   "file": "kit/tick.wav",
-   "at": "list.in",
-   "shift": 0.2,
-   "gain_db": -21,
-   "speed": 1.08
+   "file": "kit/air-pass-fast.wav",
+   "at": "push.in",
+   "gain_db": -16,
+   "speed": 0.85
   },
   {
-   "file": "kit/grain-rustle-3.wav",
+   "file": "kit3/grain-rustle-1.wav",
    "at": "cover.close",
    "gain_db": -15,
-   "speed": 0.9,
    "low_cut": 120,
    "high_cut": 5000
   },
@@ -99,6 +96,17 @@
    "at": "emblem.fly",
    "gain_db": -14,
    "speed": 1.15
+  },
+  {
+   "file": "kit/blip.wav",
+   "at": "coin2.flip",
+   "gain_db": -17,
+   "speed": 0.9
+  },
+  {
+   "file": "kit2/air-pass-fast.wav",
+   "at": "paper.open",
+   "gain_db": -14
   },
   {
    "file": "kit/rise.wav",
@@ -117,15 +125,83 @@
   {
    "file": "kit/sub-swell.wav",
    "at": "logo.reveal",
+   "until": 21.619999999999997,
    "gain_db": -11,
-   "fade_out": 1.6,
-   "until": 15.4
+   "fade_out": 1.6
   },
   {
-   "file": "kit/blip.wav",
-   "at": "soon.in",
+   "file": "kit2/blip.wav",
+   "at": "photo.in",
+   "gain_db": -18
+  },
+  {
+   "file": "kit/tick.wav",
+   "at": "title2.in",
+   "gain_db": -20,
+   "speed": 0.92
+  },
+  {
+   "file": "kit/grain-rustle-2.wav",
+   "at": "write.start",
+   "shift": 0,
    "gain_db": -19,
-   "speed": 0.9
+   "low_cut": 900,
+   "high_cut": 7000,
+   "speed": 1.0
+  },
+  {
+   "file": "kit/grain-rustle-3.wav",
+   "at": "write.start",
+   "shift": 0.62,
+   "gain_db": -19,
+   "low_cut": 900,
+   "high_cut": 7000,
+   "speed": 1.04
+  },
+  {
+   "file": "kit2/grain-rustle-2.wav",
+   "at": "write.start",
+   "shift": 1.24,
+   "gain_db": -19,
+   "low_cut": 900,
+   "high_cut": 7000,
+   "speed": 1.08
+  },
+  {
+   "file": "kit2/grain-rustle-3.wav",
+   "at": "write.start",
+   "shift": 1.86,
+   "gain_db": -19,
+   "low_cut": 900,
+   "high_cut": 7000,
+   "speed": 1.0
+  },
+  {
+   "file": "kit3/grain-rustle-2.wav",
+   "at": "write.start",
+   "shift": 2.63,
+   "gain_db": -18,
+   "low_cut": 900,
+   "high_cut": 7000,
+   "speed": 1.04
+  },
+  {
+   "file": "kit3/grain-rustle-3.wav",
+   "at": "write.start",
+   "shift": 3.51,
+   "gain_db": -18,
+   "low_cut": 900,
+   "high_cut": 7000,
+   "speed": 1.08
+  },
+  {
+   "file": "kit3/tick.wav",
+   "at": "write.start",
+   "shift": 4.39,
+   "gain_db": -18,
+   "low_cut": 900,
+   "high_cut": 7000,
+   "speed": 1.0
   }
  ]
 }

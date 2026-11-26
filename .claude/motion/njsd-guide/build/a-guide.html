@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>NJSD Capital: The Financial Guide (Video A)</title>
-<!-- Level 1, code only. Vertical 1080x1920. Navy + gold (the brand's formal palette for financial material).
-     Preview: open in a browser (loops). ?t=6.2 holds one frame. -->
+<title>NJSD Capital: The Financial Guide (Video A v2)</title>
+<!-- Level 1, code only. Vertical 1080x1920. Navy + gold + orange.
+     Coin -> emblem -> 3D guide -> worksheet page with a hand writing in it -> primary logo + Scott's photo.
+     Preview: open in a browser (loops). ?t=10 holds one frame. -->
 <style>
   @font-face{font-family:'Oswald';font-weight:500;src:url('vendor/fonts/Oswald-500.woff2') format('woff2');}
   @font-face{font-family:'Oswald';font-weight:600;src:url('vendor/fonts/Oswald-600.woff2') format('woff2');}
@@ -12,86 +13,86 @@
   @font-face{font-family:'Archivo';font-weight:400;src:url('vendor/fonts/Archivo-400.woff2') format('woff2');}
   @font-face{font-family:'Archivo';font-weight:500;src:url('vendor/fonts/Archivo-500.woff2') format('woff2');}
   @font-face{font-family:'Archivo';font-weight:600;src:url('vendor/fonts/Archivo-600.woff2') format('woff2');}
+  @font-face{font-family:'Caveat';font-weight:700;src:url('vendor/fonts/Caveat-700.woff2') format('woff2');}
   html,body{margin:0;background:#1B2A4A;}
   #stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#1B2A4A;font-family:'Archivo',sans-serif;}
   #bg{position:absolute;inset:0;}
   .abs{position:absolute;left:0;top:0;}
   #world{position:absolute;inset:0;transform-origin:540px 960px;}
-  /* coin */
+  #push{position:absolute;inset:0;transform-origin:540px 960px;}
   #coin{width:620px;height:620px;transform-style:preserve-3d;}
   #coin img{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;}
   #coin .back{transform:rotateY(180deg);clip-path:circle(49.6% at 50% 50%);}
-  /* book */
-  #scene{position:absolute;left:0;top:0;width:1080px;height:1920px;perspective:2200px;perspective-origin:540px 900px;}
+  #scene{position:absolute;left:0;top:0;width:1080px;height:1920px;perspective:2200px;perspective-origin:540px 960px;}
   #book{position:absolute;transform-style:preserve-3d;}
   .face{position:absolute;box-sizing:border-box;backface-visibility:hidden;}
   #cover{transform-style:preserve-3d;transform-origin:0 50%;}
   #coverFront{inset:0;}
   #ring{position:absolute;box-sizing:border-box;border:solid #D4AF37;}
-  #ringInner{position:absolute;box-sizing:border-box;border:2px solid rgba(212,175,55,.55);}
+  #ringInner{position:absolute;box-sizing:border-box;border:3px solid #F66733;}
   #art{position:absolute;clip-path:circle(47.8% at 50% 50%);}
   #coverBack{inset:0;background:#14213D;transform:rotateY(180deg);border:10px solid #D4AF37;border-radius:14px;}
-  #page{background:#F8F9FA;border-radius:6px 14px 14px 6px;}
+  #page{background:#F8F9FA;border-radius:6px 14px 14px 6px;overflow:hidden;}
   #spine{background:linear-gradient(90deg,#101B33,#1a2950 50%,#101B33);}
   #edge{background:repeating-linear-gradient(90deg,#e9e6dd 0 2px,#f8f9fa 2px 5px);}
   #backCover{background:#14213D;border-radius:14px;}
   .t{position:absolute;white-space:nowrap;}
-  .word{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .08em;line-height:1.18;}
+  .word{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .06em;line-height:1.18;}
   .word span{display:inline-block;will-change:transform,filter;}
   #title{left:-40px;right:-40px;text-align:center;font-family:'Oswald';font-weight:600;color:#D4AF37;letter-spacing:.02em;}
   #sub{left:0;right:0;text-align:center;font-weight:500;color:#F8F9FA;letter-spacing:.32em;}
   #kicker{left:0;width:1080px;top:250px;text-align:center;font-family:'Oswald';font-weight:500;font-size:34px;letter-spacing:.42em;color:#D4AF37;}
-  #list{position:absolute;}
-  .row{position:absolute;left:0;white-space:nowrap;font-family:'Oswald';font-weight:600;color:#1B2A4A;font-size:40px;letter-spacing:.02em;}
-  .row b{color:#D4AF37;font-weight:600;margin-right:18px;}
-  #pagehead{position:absolute;font-family:'Oswald';font-weight:500;letter-spacing:.35em;font-size:24px;color:#B08A1E;}
-  #logo{position:absolute;}
-  #soon{left:0;width:1080px;top:1240px;text-align:center;font-family:'Oswald';font-weight:600;font-size:64px;letter-spacing:.3em;color:#D4AF37;}
-  #tag{left:0;width:1080px;top:1340px;text-align:center;font-size:34px;color:#F8F9FA;letter-spacing:.04em;}
-  #url{left:0;width:1080px;top:1404px;text-align:center;font-size:30px;color:#D4AF37;letter-spacing:.12em;}
-  #fine{left:0;width:1080px;top:1800px;text-align:center;font-size:22px;color:rgba(248,249,250,.55);letter-spacing:.04em;}
-  #sweep{position:absolute;pointer-events:none;mix-blend-mode:screen;}
+  #kicker em{font-style:normal;color:#F66733;}
+  #probe{position:absolute;width:1px;height:1px;}
+  #handLayer{position:absolute;inset:0;pointer-events:none;}
+  #flip{position:absolute;transform-style:preserve-3d;}
+  #flip img{position:absolute;backface-visibility:hidden;}
+  #paper{position:absolute;inset:0;background:#F8F9FA;}
 </style>
 </head>
 <body>
 <div id="stage">
   <canvas id="bg" width="1080" height="1920"></canvas>
   <div id="world">
-    <div id="scene">
-      <div id="book">
-        <div class="face" id="backCover"></div>
-        <div class="face" id="spine"></div>
-        <div class="face" id="edge"></div>
-        <div class="face" id="page">
-          <div id="pagehead">INSIDE THE GUIDE</div>
-          <div id="list"></div>
-        </div>
-        <div class="face" id="cover">
-          <div class="face" id="coverFront">
-            <div id="ring"></div>
-            <div id="ringInner"></div>
-            <img id="art" src="../assets/logos/derived_Emblem_Gold-on-Navy_cropped-from-Formal.svg">
-            <div class="t" id="title"></div>
-            <div class="t" id="sub"></div>
+    <div id="push">
+      <div id="scene">
+        <div id="book">
+          <div class="face" id="backCover"></div>
+          <div class="face" id="spine"></div>
+          <div class="face" id="edge"></div>
+          <div class="face" id="page"><div id="wsHolder" style="position:absolute;transform-origin:0 0;"></div></div>
+          <div class="face" id="cover">
+            <div class="face" id="coverFront">
+              <div id="ring"></div>
+              <div id="ringInner"></div>
+              <img id="art" src="../assets/logos/derived_Emblem_Gold-on-Navy_cropped-from-Formal.svg">
+              <div class="t" id="title"></div>
+              <div class="t" id="sub"></div>
+            </div>
+            <div class="face" id="coverBack"></div>
           </div>
-          <div class="face" id="coverBack"></div>
         </div>
-      </div>
-      <div id="coin" class="abs">
-        <img src="../assets/logos/SDV_Monogram_Circle_Gold.svg">
-        <img class="back" src="../assets/logos/derived_Emblem_Gold-on-Navy_cropped-from-Formal.svg">
+        <div id="coin" class="abs">
+          <img src="../assets/logos/SDV_Monogram_Circle_Gold.svg">
+          <img class="back" src="../assets/logos/derived_Emblem_Gold-on-Navy_cropped-from-Formal.svg">
+        </div>
       </div>
     </div>
     <div class="t" id="kicker"></div>
-    <img id="logo" src="../assets/logos/SDV_Logo_Horizontal_Formal_on-Navy.svg">
-    <div id="sweep"></div>
-    <div class="t" id="soon"></div>
-    <div class="t" id="tag"></div>
-    <div class="t" id="url"></div>
+    <div id="paper"></div>
+    <div id="flipWrap" style="position:absolute;inset:0;perspective:2000px;">
+      <div id="flip">
+        <img id="flipFront" src="../assets/logos/derived_Emblem_Gold-on-Navy_cropped-from-Formal.svg" style="clip-path:circle(49.6% at 50% 50%);">
+        <img id="flipBack" src="../assets/logos/SDV_Emblem_Circle_Orange.svg" style="transform:rotateY(180deg);">
+      </div>
+    </div>
+    <div id="endLayer"></div>
+    <div id="handLayer"></div>
   </div>
-  <div class="t" id="fine"></div>
 </div>
+<script src="shared.js"></script>
 <script>
+const {clamp,span,eo,eio,lerp,words,slide,buildWorksheet,buildHand,buildEnd}=SH;
 const B = {
   start: 0,
   'coin.land': 1.4,
@@ -99,148 +100,156 @@ const B = {
   'cover.grow': 3.5, 'cover.grown': 4.7,
   'title.in': 4.6,
   'kicker.in': 5.3,
-  'cover.open': 7.4, 'cover.opened': 8.6,
-  'list.in': 8.5,
-  'list.out': 10.9,
-  'cover.close': 11.3, 'cover.closed': 12.2,
-  'emblem.fly': 12.2, 'emblem.land': 13.2,
-  'logo.reveal': 13.2, 'logo.revealed': 14.0,
-  'soon.in': 14.0,
-  end: 16,
+  'cover.open': 6.9, 'cover.opened': 8.0,
+  'push.in': 7.5, 'push.full': 8.7,
+  'hand.in': 8.5, 'write.start': 9.15,
+  'write.end': 0,            // filled below from the worksheet plan
+  'hand.out': 0, 'push.out': 0, 'cover.close': 0, 'cover.closed': 0,
+  'emblem.fly': 0, 'emblem.land': 0, 'coin2.flip': 0, 'coin2.flipped': 0,
+  'paper.open': 0, 'paper.full': 0,
+  'logo.reveal': 0, 'logo.revealed': 0, 'photo.in': 0, 'title2.in': 0,
+  end: 0,
 };
 const W=1080,H=1920,CX=540,CY=960;
-const clamp=x=>Math.min(1,Math.max(0,x)), span=(t,a,b)=>clamp((t-a)/(b-a));
-const eo=x=>1-Math.pow(1-x,4), eio=x=>x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2;
-const lerp=(a,b,k)=>a+(b-a)*k;
 const $=id=>document.getElementById(id);
 
-function words(el,list,cls){ return list.map(w=>{const box=document.createElement('span');box.className='word';const s=document.createElement('span');s.innerHTML=w;box.append(s);if(el.childNodes.length)el.append(document.createTextNode(' '));el.append(box);return s;}); }
-function slide(spans,t,tin,tout,gap=0.09,dur=0.55){ spans.forEach((s,i)=>{const up=eo(span(t,tin+i*gap,tin+i*gap+dur)); const away=tout==null?0:eio(span(t,tout+i*gap*.5,tout+i*gap*.5+.4)); s.style.transform=`translateY(${(1-up)*112-away*112}%)`; s.style.filter=`blur(${(1-up)*6+away*6}px)`;}); }
-
-// copy (placeholder for a proposed product; edit before publishing)
+// copy
 const titleW=words($('title'),['THE','FINANCIAL','GUIDE']);
 const subW=words($('sub'),['NJSD','CAPITAL','LLC']);
-const kickW=words($('kicker'),['FINANCIAL','COACHING']);
-const ROWS=[['01','KNOW YOUR NUMBERS'],['02','BUILD YOUR CUSHION'],['03','GROW YOUR LEGACY']];
-const rows=ROWS.map(([n,txt],i)=>{const r=document.createElement('div');r.className='row';r.style.top=(i*92)+'px';const w=document.createElement('span');w.className='word';const s=document.createElement('span');s.innerHTML=`<b>${n}</b>${txt}`;w.append(s);r.append(w);$('list').append(r);return s;});
-const soonW=words($('soon'),['COMING','SOON']);
-const tagW=words($('tag'),['Scott','Davis','Ventures','&middot;','Financial','Coaching']);
-const urlW=words($('url'),['njsdcapital.com']);
-const fineW=words($('fine'),'Concept preview. Educational content, not financial advice.'.split(' '));
+const kickW=words($('kicker'),['FINANCIAL','<em>&middot;</em>','COACHING']);
 
-// geometry
-const S0=620, U0=S0/360;                 // coin/emblem box at full size
+// worksheet inside the book's first page
 const COVER_W=560, COVER_H=760, THICK=46;
-const LOGO_W=960, LU=LOGO_W/1132, LOGO_X=(W-LOGO_W)/2, LOGO_Y=CY-180*LU - 40;
-const END_EMB={x:LOGO_X+180*LU, y:LOGO_Y+180*LU, size:360*LU};
+const PAGE_W=COVER_W-14, PAGE_H=COVER_H-16;
+const ws=buildWorksheet($('wsHolder'));
+const WS_S=Math.min((PAGE_W-16)/ws.W,(PAGE_H-12)/ws.H);
+$('wsHolder').style.transform=`translate(${(PAGE_W-ws.W*WS_S)/2}px,${(PAGE_H-ws.H*WS_S)/2}px) scale(${WS_S})`;
+const probe=document.createElement('div'); probe.id='probe'; ws.pg.append(probe);
+const hand=buildHand($('handLayer'));
 
+// timeline after the writing
+B['write.end']=B['write.start']+ws.total;
+B['hand.out']=B['write.end']+0.15;
+B['push.out']=B['write.end']+0.45; const PUSH_OUT_END=B['push.out']+0.9;
+B['cover.close']=B['write.end']+0.6; B['cover.closed']=B['cover.close']+0.9;
+B['emblem.fly']=B['cover.closed']; B['emblem.land']=B['emblem.fly']+1.0;
+B['coin2.flip']=B['emblem.land']; B['coin2.flipped']=B['coin2.flip']+0.6;
+B['paper.open']=B['emblem.land']-0.1; B['paper.full']=B['paper.open']+1.0;
+B['logo.reveal']=B['coin2.flipped']; B['logo.revealed']=B['logo.reveal']+0.7;
+B['photo.in']=B['logo.revealed']-0.1; B['title2.in']=B['photo.in']+0.9;
+B.end=B['title2.in']+3.2;
+
+// end card geometry (primary logo, viewBox -22 -22 1154 404, emblem in the first 404 units)
+const LOGO_W=900, LU=LOGO_W/1154, LOGO_X=(W-LOGO_W)/2, LOGO_Y=170;
+const EMB={x:LOGO_X+202*LU, y:LOGO_Y+202*LU, box:404*LU};          // orange emblem image box
+const END_CROP=360*LU;                                              // gold crop face, circle r176 matches
+const end=buildEnd($('endLayer'),{logo:{x:LOGO_X,y:LOGO_Y,w:LOGO_W},photo:{cx:CX,cy:880,w:500,h:712},titleY:1272});
+
+const S0=620;
 const bg=$('bg').getContext('2d');
 function drawBg(t){
   bg.fillStyle='#1B2A4A'; bg.fillRect(0,0,W,H);
-  const fade=1-eio(span(t,B['emblem.fly'],B['logo.reveal']));
-  bg.globalAlpha=fade;
-  for(const [ph,r,c,ax,ay] of [[0,760,'rgba(212,175,55,0.10)',300,380],[2.1,620,'rgba(246,103,51,0.05)',380,520],[4.2,900,'rgba(10,18,36,0.35)',420,300]]){
+  for(const [ph,r,c,ax,ay] of [[0,760,'rgba(212,175,55,0.11)',300,380],[2.1,640,'rgba(246,103,51,0.08)',380,520],[4.2,900,'rgba(10,18,36,0.35)',420,300]]){
     const x=CX+Math.cos(t*.21+ph)*ax, y=CY+Math.sin(t*.16+ph)*ay;
     const g=bg.createRadialGradient(x,y,0,x,y,r); g.addColorStop(0,c); g.addColorStop(1,'rgba(27,42,74,0)'); bg.fillStyle=g; bg.fillRect(0,0,W,H);
   }
-  bg.globalAlpha=1;
 }
 
 function seek(t){
   drawBg(t);
-  const world=$('world');
-  world.style.transform=`scale(${1+0.015*Math.sin(t*0.4)*(1-span(t,B['emblem.fly'],B['emblem.land']))+0.035*eio(span(t,B['logo.reveal'],B.end))})`;
+  $('world').style.transform=`scale(${1.006+0.006*Math.sin(t*0.4)+0.03*eio(span(t,B['logo.reveal'],B.end))})`;
 
-  // ---- coin: arrives, spins, flips to the emblem ----
-  const arrive=eo(span(t,0,B['coin.land']));
-  const flip=eio(span(t,B['coin.flip'],B['coin.flipped']));
-  const coinScale=lerp(0.25,1,arrive);
-  const coinRot=(1-arrive)*-540 + flip*180 + Math.sin(t*1.1)*4*(1-flip);
+  // coin
+  const arrive=eo(span(t,0,B['coin.land'])), flip=eio(span(t,B['coin.flip'],B['coin.flipped']));
   const coin=$('coin');
-  const coinVisible=t<B['coin.flipped'];
-  coin.style.display=coinVisible?'block':'none';
-  coin.style.transform=`translate(${CX-S0/2}px,${CY-S0/2}px) scale(${coinScale}) rotateY(${coinRot}deg) rotateX(${(1-arrive)*25}deg)`;
+  coin.style.display=t<B['coin.flipped']?'block':'none';
+  coin.style.transform=`translate(${CX-S0/2}px,${CY-S0/2}px) scale(${lerp(0.25,1,arrive)}) rotateY(${(1-arrive)*-540+flip*180+Math.sin(t*1.1)*4*(1-flip)}deg) rotateX(${(1-arrive)*25}deg)`;
 
-  // ---- emblem -> cover -> (open/close) -> emblem -> logo ----
+  // book
   const grow=eio(span(t,B['cover.grow'],B['cover.grown']));
-  const back=eio(span(t,B['emblem.fly'],B['emblem.land']));        // cover collapses back into an emblem and flies to the logo
-  const shape=grow*(1-back);                                         // 0 = circle, 1 = book cover
-  const showBook=t>=B['coin.flipped'] && t<B['emblem.land']+0.0001;
+  const back=eio(span(t,B['emblem.fly'],B['emblem.land']));
+  const shape=grow*(1-back);
   const book=$('book');
-  book.style.display=showBook?'block':'none';
-
-  // emblem size/position when it is a circle: start at centre (full), end at the logo's emblem
-  const embSize=lerp(S0, END_EMB.size, back), embX=lerp(CX, END_EMB.x, back), embY=lerp(CY, END_EMB.y, back);
+  book.style.display=(t>=B['coin.flipped'] && t<B['emblem.land'])?'block':'none';
+  const embSize=lerp(S0,END_CROP,back), embX=lerp(CX,EMB.x,back), embY=lerp(CY,EMB.y,back);
   const u=embSize/360;
-  const ringD=lerp(358*u, COVER_W, shape), ringH=lerp(358*u, COVER_H, shape);
-  const ringB=lerp(6*u, 10, shape);
-  const bw=ringD, bh=ringH;
+  const bw=lerp(358*u,COVER_W,shape), bh=lerp(358*u,COVER_H,shape), ringB=lerp(6*u,10,shape);
   const bx=embX-bw/2, by=embY-bh/2;
-  // 3D: thickness grows with the cover, slow turn while it is a book
-  const turnIn=eio(span(t,B['cover.grow']+0.4,B['cover.grown']+0.8))*(1-eio(span(t,B['cover.close'],B['cover.closed'])));
-  const ry=turnIn*(-24+Math.sin(t*0.5)*4) + 0;
-  const rx=turnIn*(6+Math.cos(t*0.4)*1.5);
+  const open=eio(span(t,B['cover.open'],B['cover.opened']))*(1-eio(span(t,B['cover.close'],B['cover.closed'])));
+  const turnIn=eio(span(t,B['cover.grow']+0.4,B['cover.grown']+0.8))*(1-eio(span(t,B['cover.open']-0.2,B['cover.opened'])));
+  const ry=turnIn*(-24+Math.sin(t*0.5)*4), rx=turnIn*(6+Math.cos(t*0.4)*1.5);
   const th=THICK*shape;
   book.style.width=bw+'px'; book.style.height=bh+'px';
   book.style.transform=`translate(${bx}px,${by}px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-  const radius=lerp(ringD/2,14,shape);
-  // faces
+  const radius=lerp(bw/2,14,shape);
   const cover=$('cover'), front=$('coverFront');
   cover.style.width=bw+'px'; cover.style.height=bh+'px';
-  const open=eio(span(t,B['cover.open'],B['cover.opened']))*(1-eio(span(t,B['cover.close'],B['cover.closed'])));
-  cover.style.transform=`translateZ(${th/2}px) rotateY(${-128*open}deg)`;
-  front.style.borderRadius=radius+'px';
-  front.style.background=`rgba(20,33,61,${shape})`;
-  const ring=$('ring');
-  ring.style.left='0px'; ring.style.top='0px'; ring.style.width=bw+'px'; ring.style.height=bh+'px';
-  ring.style.borderWidth=ringB+'px'; ring.style.borderRadius=radius+'px';
-  const ri=$('ringInner'); const inset=lerp(12*u,26,shape);
-  ri.style.left=inset+'px'; ri.style.top=inset+'px'; ri.style.width=(bw-2*inset)+'px'; ri.style.height=(bh-2*inset)+'px'; ri.style.borderRadius=Math.max(0,radius-inset)+'px';
-  ri.style.opacity=shape;   // the thin inner rule only exists on the cover
-  // art: full emblem at circle stage, a foil stamp on the cover
-  const artSize=lerp(embSize, 300, shape);
-  const art=$('art');
-  art.style.width=artSize+'px'; art.style.height=artSize+'px';
-  art.style.left=(bw/2-artSize/2)+'px'; art.style.top=lerp(bh/2-artSize/2, 92, shape)+'px';
-  // spine, page edge, back cover, page
-  const sp=$('spine'); sp.style.width=th+'px'; sp.style.height=bh+'px'; sp.style.transform=`translateX(${-th/2}px) rotateY(-90deg)`; sp.style.left='0px';
-  const ed=$('edge'); ed.style.width=th+'px'; ed.style.height=(bh-16)+'px'; ed.style.top='8px'; ed.style.left=(bw-th/2-4)+'px'; ed.style.transform=`rotateY(90deg)`;
+  cover.style.transform=`translateZ(${th/2}px) rotateY(${-150*open}deg)`;
+  front.style.borderRadius=radius+'px'; front.style.background=`rgba(20,33,61,${shape})`;
+  const ring=$('ring'); ring.style.left=ring.style.top='0px'; ring.style.width=bw+'px'; ring.style.height=bh+'px'; ring.style.borderWidth=ringB+'px'; ring.style.borderRadius=radius+'px';
+  const ri=$('ringInner'); const inset=lerp(12*u,24,shape);
+  ri.style.left=ri.style.top=inset+'px'; ri.style.width=(bw-2*inset)+'px'; ri.style.height=(bh-2*inset)+'px'; ri.style.borderRadius=Math.max(0,radius-inset)+'px'; ri.style.opacity=shape;
+  const artSize=lerp(embSize,300,shape), art=$('art');
+  art.style.width=art.style.height=artSize+'px'; art.style.left=(bw/2-artSize/2)+'px'; art.style.top=lerp(bh/2-artSize/2,92,shape)+'px';
+  const sp=$('spine'); sp.style.width=th+'px'; sp.style.height=bh+'px'; sp.style.left='0px'; sp.style.transform=`translateX(${-th/2}px) rotateY(-90deg)`;
+  const ed=$('edge'); ed.style.width=th+'px'; ed.style.height=(bh-16)+'px'; ed.style.top='8px'; ed.style.left=(bw-th/2-4)+'px'; ed.style.transform='rotateY(90deg)';
   const bc=$('backCover'); bc.style.width=bw+'px'; bc.style.height=bh+'px'; bc.style.transform=`translateZ(${-th/2}px) rotateY(180deg)`; bc.style.borderRadius=radius+'px';
-  const pg=$('page'); pg.style.width=(bw-14)+'px'; pg.style.height=(bh-16)+'px'; pg.style.left='4px'; pg.style.top='8px'; pg.style.transform=`translateZ(${th/2-2}px)`;
+  const pg=$('page'); pg.style.width=PAGE_W+'px'; pg.style.height=PAGE_H+'px'; pg.style.left='4px'; pg.style.top='8px'; pg.style.transform=`translateZ(${th/2-2}px)`;
   pg.style.visibility=shape>0.98?'visible':'hidden';
   sp.style.visibility=ed.style.visibility=bc.style.visibility=shape>0.35?'visible':'hidden';
-  const ph=$('pagehead'); ph.style.left='60px'; ph.style.top='120px';
-  const list=$('list'); list.style.left='60px'; list.style.top='210px';
-  // cover text
   const title=$('title'); title.style.top=(92+300+40)+'px'; title.style.fontSize='52px';
   const sub=$('sub'); sub.style.top=(92+300+40+86)+'px'; sub.style.fontSize='26px';
-  slide(titleW,t,B['title.in'],B['cover.close']+0.0,0.12,0.6);
-  slide(subW,t,B['title.in']+0.45,B['cover.close'],0.08,0.5);
+  slide(titleW,t,B['title.in'],B['cover.open'],0.12,0.6);
+  slide(subW,t,B['title.in']+0.45,B['cover.open'],0.08,0.5);
   title.style.visibility=sub.style.visibility=(t>B['cover.grow']&&t<B['emblem.fly'])?'visible':'hidden';
-  slide(kickW,t,B['kicker.in'],B['cover.close'],0.12,0.6);
-  slide(rows,t,B['list.in'],B['list.out'],0.32,0.6);
+  slide(kickW,t,B['kicker.in'],B['cover.open'],0.12,0.6);
 
-  // ---- end card: the emblem lands exactly on the logo's own emblem, then the wordmark slides out from behind it ----
-  const logo=$('logo');
-  logo.style.width=LOGO_W+'px'; logo.style.left=LOGO_X+'px'; logo.style.top=LOGO_Y+'px';
-  const reveal=eo(span(t,B['logo.reveal'],B['logo.revealed']));
-  logo.style.display=t>=B['emblem.land']?'block':'none';
-  const hide=(1-360/1132)*100*(1-reveal);
-  logo.style.clipPath=`inset(0 ${hide}% 0 0)`;
-  // light sweep across the logo on the hold
-  const sw=$('sweep'); const sx=lerp(-400,W+200,span(t,B['logo.revealed']+0.3,B.end-0.2));
-  sw.style.left=LOGO_X+'px'; sw.style.top=LOGO_Y+'px'; sw.style.width=LOGO_W+'px'; sw.style.height=(360*LU)+'px';
-  sw.style.background=`linear-gradient(105deg, rgba(255,255,255,0) ${sx-LOGO_X-160}px, rgba(255,240,200,0.16) ${sx-LOGO_X}px, rgba(255,255,255,0) ${sx-LOGO_X+160}px)`;
-  sw.style.display='none';
-  slide(soonW,t,B['soon.in'],null,0.14,0.6);
-  slide(tagW,t,B['soon.in']+0.35,null,0.05,0.5);
-  slide(urlW,t,B['soon.in']+0.7,null,0.05,0.5);
-  slide(fineW,t,B['soon.in']+1.0,null,0.02,0.45);
+  // push into the page, then back out
+  const pin=eio(span(t,B['push.in'],B['push.full'])), pout=eio(span(t,B['push.out'],PUSH_OUT_END));
+  const PUSH=1.36, ps=1+(PUSH-1)*pin*(1-pout);
+  $('push').style.transform=`scale(${ps})`;
+
+  // the worksheet is written as the hand moves
+  const wu=t-B['write.start'];
+  if(t<B['write.start']-0.01){ ws.write(-1); }
+  const st=ws.write(Math.max(-1,wu));
+  // hand: enters from lower right, follows the pen tip, leaves to the lower right
+  const handIn=eo(span(t,B['hand.in'],B['write.start'])), handOut=eio(span(t,B['hand.out'],B['hand.out']+0.55));
+  const showHand=t>=B['hand.in'] && t<B['hand.out']+0.6;
+  hand.style.display=showHand?'block':'none';
+  if(showHand && st.pen){
+    probe.style.left=st.pen.x+'px'; probe.style.top=st.pen.y+'px';
+    const r=probe.getBoundingClientRect(); const sr=$('stage').getBoundingClientRect();
+    const wsc=parseFloat(getComputedStyle($('world')).transform.split('(')[1]) || 1;
+    // probe rect is in viewport px; undo the world scale around its origin so the hand layer (inside world) lines up
+    let px=(r.left-sr.left), py=(r.top-sr.top);
+    px=CX+(px-CX)/wsc; py=CY+(py-CY)/wsc;
+    const lift=st.down?0:-10;
+    const offX=(1-handIn)*520+handOut*560, offY=(1-handIn)*620+handOut*640;
+    hand.style.transform=`translate(${px+offX}px,${py+offY+lift}px) scale(${0.62*ps/PUSH*1.0+0.0}) rotate(${Math.sin(t*3.1)*1.5}deg)`;
+  }
+
+  // emblem lands on the primary logo's emblem, coin-flips from gold-on-navy to the orange emblem while the paper opens
+  const flipEl=$('flip');
+  const showFlip=t>=B['emblem.land'] && t<B['logo.reveal'];
+  flipEl.style.display=showFlip?'block':'none';
+  const f2=eio(span(t,B['coin2.flip'],B['coin2.flipped']));
+  flipEl.style.width=flipEl.style.height=EMB.box+'px';
+  flipEl.style.left=(EMB.x-EMB.box/2)+'px'; flipEl.style.top=(EMB.y-EMB.box/2)+'px';
+  flipEl.style.transform=`rotateY(${180*f2}deg)`;
+  const ff=$('flipFront'), fb=$('flipBack');
+  ff.style.width=ff.style.height=END_CROP+'px'; ff.style.left=ff.style.top=((EMB.box-END_CROP)/2)+'px';
+  fb.style.width=fb.style.height=EMB.box+'px'; fb.style.left=fb.style.top='0px';
+  const po=eio(span(t,B['paper.open'],B['paper.full']));
+  const paper=$('paper'); paper.style.display=t>=B['paper.open']?'block':'none';
+  paper.style.clipPath=`circle(${lerp(0,2300,po)}px at ${EMB.x}px ${EMB.y}px)`;
+
+  end.seek(t,{reveal:B['logo.reveal'],revealed:B['logo.revealed'],photo:B['photo.in'],title:B['title2.in'],end:B.end});
 }
-window.ad={duration:B.end,width:W,height:H,events:B,seek,ready:Promise.all([document.fonts.ready,...[...document.images].map(i=>i.decode().catch(()=>{}))])};
+window.ad={duration:B.end,width:W,height:H,events:B,seek,ready:Promise.all([document.fonts.ready,...[...document.images].map(i=>i.decode().catch(()=>{}))]).then(()=>ws.measure())};
 const held=new URLSearchParams(location.search).get('t');
 if(held!==null) window.ad.ready.then(()=>seek(Number(held)));
-else if(!navigator.webdriver){const t0=performance.now();(function loop(){seek(((performance.now()-t0)/1000)%B.end);requestAnimationFrame(loop);})();}
+else if(!navigator.webdriver){window.ad.ready.then(()=>{const t0=performance.now();(function loop(){seek(((performance.now()-t0)/1000)%B.end);requestAnimationFrame(loop);})();});}
 else seek(0);
 </script>
 </body>

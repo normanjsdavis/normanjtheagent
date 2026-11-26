@@ -7,3 +7,8 @@ sound/*.master.wav
 sound/*.master.mp4
 sound/kit/
 storyboard/*/render/
+out/*_silent.mp4
+out/a2-check/
+out/b2-check/
+sound/kit2/
+sound/kit3/

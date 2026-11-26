@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>NJSD Capital: Three Moves (Video B)</title>
-<!-- Level 1, code only. Vertical 1080x1920. Layout language borrowed from Scott's carousels (kicker, pill, step cards,
-     Oswald + Archivo), recoloured in the NJSD Capital / Scott Davis Ventures palette. No real-estate branding.
-     Preview: open in a browser (loops). ?t=6.2 holds one frame. -->
+<title>NJSD Capital: Three Moves (Video B v2)</title>
+<!-- Level 1, code only. Vertical 1080x1920. Carousel layout in the NJSD palette (navy, orange, gold).
+     Hook -> step one card grows into the guide worksheet, a hand fills it in -> it shrinks to step two -> step three
+     -> circle -> emblem -> primary logo + Scott's photo.  Preview: open in a browser. ?t=8 holds one frame. -->
 <style>
   @font-face{font-family:'Oswald';font-weight:500;src:url('vendor/fonts/Oswald-500.woff2') format('woff2');}
   @font-face{font-family:'Oswald';font-weight:600;src:url('vendor/fonts/Oswald-600.woff2') format('woff2');}
@@ -13,6 +13,7 @@
   @font-face{font-family:'Archivo';font-weight:400;src:url('vendor/fonts/Archivo-400.woff2') format('woff2');}
   @font-face{font-family:'Archivo';font-weight:500;src:url('vendor/fonts/Archivo-500.woff2') format('woff2');}
   @font-face{font-family:'Archivo';font-weight:600;src:url('vendor/fonts/Archivo-600.woff2') format('woff2');}
+  @font-face{font-family:'Caveat';font-weight:700;src:url('vendor/fonts/Caveat-700.woff2') format('woff2');}
   html,body{margin:0;background:#1B2A4A;}
   #stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#1B2A4A;font-family:'Archivo',sans-serif;}
   canvas{position:absolute;inset:0;}
@@ -21,32 +22,27 @@
   .word{display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 .04em;line-height:1.14;}
   .word span{display:inline-block;will-change:transform,filter;}
   #kicker{left:64px;top:96px;font-family:'Oswald';font-weight:600;font-size:34px;letter-spacing:.2em;color:#F66733;}
-  #pill{position:absolute;right:56px;top:72px;height:96px;background:#F66733;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden;}
-  #pill .t{right:34px;top:20px;font-family:'Oswald';font-weight:700;font-size:44px;letter-spacing:.08em;color:#F8F9FA;}
+  #pill{position:absolute;right:56px;top:72px;height:96px;width:430px;background:#F66733;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden;border-bottom:6px solid #D4AF37;box-sizing:border-box;}
+  #pill .t{right:34px;top:18px;font-family:'Oswald';font-weight:700;font-size:44px;letter-spacing:.08em;color:#F8F9FA;}
   #head{left:0;width:1080px;text-align:center;font-family:'Oswald';font-weight:700;font-size:120px;color:#F8F9FA;line-height:1.02;transform-origin:540px 0;}
   #head .ln{display:block;}
   #head em{font-style:normal;color:#F66733;}
+  #goldline{position:absolute;height:8px;background:#D4AF37;border-radius:4px;transform-origin:0 50%;}
   #sub{left:0;width:1080px;text-align:center;font-size:46px;color:rgba(248,249,250,.86);}
-  #cardWrap{position:absolute;left:0;top:0;width:1080px;height:1920px;perspective:2400px;perspective-origin:540px 1050px;}
+  #cardWrap{position:absolute;left:0;top:0;width:1080px;height:1920px;perspective:2400px;perspective-origin:540px 1000px;}
   #card{position:absolute;transform-style:preserve-3d;}
   .face{position:absolute;inset:0;box-sizing:border-box;backface-visibility:hidden;border-radius:28px;overflow:hidden;}
-  .face .k{position:absolute;left:56px;top:64px;font-family:'Oswald';font-weight:600;font-size:36px;letter-spacing:.2em;}
-  .face .h{position:absolute;left:56px;top:122px;font-family:'Oswald';font-weight:700;font-size:96px;line-height:1.02;}
-  .orange{background:#F66733;color:#F8F9FA;}
-  .orange .k{color:#FCE3D6;}
-  .dark{background:#111B33;border:3px solid rgba(246,103,51,.75);color:#F8F9FA;}
-  .dark .k{color:#F66733;}
+  .face .k{position:absolute;left:56px;top:70px;font-family:'Oswald';font-weight:600;font-size:36px;letter-spacing:.2em;}
+  .face .h{position:absolute;left:56px;top:128px;font-family:'Oswald';font-weight:700;font-size:96px;line-height:1.02;color:#F8F9FA;white-space:nowrap;}
+  .face .rule{position:absolute;left:0;right:0;top:0;height:10px;background:#D4AF37;}
   #back{transform:rotateX(180deg);}
+  #wsHolder{position:absolute;left:0;top:0;transform-origin:0 0;}
+  #tint{position:absolute;inset:0;}
   #ring{position:absolute;border-radius:50%;}
   #emb{position:absolute;}
   #paper{position:absolute;inset:0;background:#F8F9FA;}
-  #logo{position:absolute;}
-  #title{left:0;width:1080px;text-align:center;font-family:'Oswald';font-weight:700;font-size:96px;color:#1B2A4A;letter-spacing:.01em;}
-  #soon{left:0;width:1080px;text-align:center;font-family:'Oswald';font-weight:600;font-size:40px;letter-spacing:.3em;color:#F66733;}
-  #url{left:0;width:1080px;text-align:center;font-size:36px;color:#333333;letter-spacing:.06em;}
-  #rule{position:absolute;left:64px;right:64px;top:1748px;height:2px;background:rgba(51,51,51,.25);transform-origin:0 50%;}
-  #foot{left:64px;top:1780px;font-size:30px;color:#555;}
-  #fine{right:64px;top:1782px;font-size:24px;color:#888;}
+  #probe{position:absolute;width:1px;height:1px;}
+  #handLayer{position:absolute;inset:0;pointer-events:none;}
 </style>
 </head>
 <body>
@@ -56,51 +52,24 @@
     <div class="t" id="kicker"></div>
     <div id="pill"><div class="t" id="pillT"></div></div>
     <div class="t" id="head"></div>
+    <div id="goldline"></div>
     <div class="t" id="sub"></div>
     <div id="cardWrap"><div id="card">
-      <div class="face" id="front"><div class="k"></div><div class="h"></div></div>
-      <div class="face dark" id="back"><div class="k"></div><div class="h"></div></div>
+      <div class="face" id="front"><div id="wsHolder"></div><div id="tint"></div><div class="rule"></div><div class="k"></div><div class="h"></div></div>
+      <div class="face" id="back"><div class="rule"></div><div class="k"></div><div class="h"></div></div>
     </div></div>
     <div id="paper"></div>
     <div id="ring"></div>
     <img id="emb" src="../assets/logos/SDV_Emblem_Circle_Orange.svg">
-    <img id="logo" src="../assets/logos/SDV_Legal_Logo_NJSD-Capital-LLC.svg">
-    <div class="t" id="title"></div>
-    <div class="t" id="soon"></div>
-    <div class="t" id="url"></div>
-    <div id="rule"></div>
-    <div class="t" id="foot"></div>
-    <div class="t" id="fine"></div>
+    <div id="endLayer"></div>
+    <div id="handLayer"></div>
   </div>
 </div>
+<script src="shared.js"></script>
 <script>
-const B = {
-  start: 0,
-  'kicker.in': 0.2, 'pill.in': 0.45,
-  'head.in': 0.7, 'sub.in': 1.9,
-  'head.up': 3.0, 'head.upped': 3.7,
-  'card.in': 3.3, 'card.landed': 4.1,
-  'flip1': 5.3, 'flip1.done': 6.0,
-  'flip2': 7.2, 'flip2.done': 7.9,
-  'head.out': 8.7,
-  'card.text.out': 8.9,
-  'card.morph': 9.1, 'card.round': 10.0,
-  'ring.draw': 9.7, 'ring.done': 10.3,
-  'art.grow': 10.3, 'art.full': 10.8,
-  'paper.open': 10.9, 'paper.full': 11.8,
-  'emb.move': 11.6, 'emb.land': 12.4,
-  'logo.reveal': 12.4, 'logo.revealed': 13.1,
-  'title.in': 12.9,
-  end: 15,
-};
+const {clamp,span,eo,eio,lerp,words,slide,buildWorksheet,buildHand,buildEnd}=SH;
 const W=1080,H=1920,CX=540,CY=960;
-const clamp=x=>Math.min(1,Math.max(0,x)), span=(t,a,b)=>clamp((t-a)/(b-a));
-const eo=x=>1-Math.pow(1-x,4), eio=x=>x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2;
-const lerp=(a,b,k)=>a+(b-a)*k;
 const $=id=>document.getElementById(id);
-function mk(el,text){const box=document.createElement('span');box.className='word';const s=document.createElement('span');s.innerHTML=text;box.append(s);if(el.childNodes.length&&!el.lastChild.classList?.contains('ln'))el.append(document.createTextNode(' '));el.append(box);return s;}
-function words(el,list){const out=[];list.forEach((w,i)=>{if(i)el.append(document.createTextNode(' '));const box=document.createElement('span');box.className='word';const s=document.createElement('span');s.innerHTML=w;box.append(s);el.append(box);out.push(s);});return out;}
-function slide(spans,t,tin,tout,gap=0.08,dur=0.55,dist=112){spans.forEach((s,i)=>{const up=eo(span(t,tin+i*gap,tin+i*gap+dur));const away=tout==null?0:eio(span(t,tout+i*gap*.5,tout+i*gap*.5+.4));s.style.transform=`translateY(${(1-up)*dist-away*dist}%)`;s.style.filter=`blur(${(1-up)*6+away*6}px)`;});}
 
 // copy (placeholder for a proposed product; edit before publishing)
 const kickW=words($('kicker'),['FINANCIAL','COACHING']);
@@ -108,32 +77,50 @@ const pillW=words($('pillT'),['COMING','SOON']);
 const HEAD=[['WHERE','DOES'],['YOUR','<em>MONEY</em>'],['GO','EACH','MONTH?']];
 const headW=[]; HEAD.forEach(line=>{const ln=document.createElement('span');ln.className='ln';line.forEach((w,i)=>{if(i)ln.append(document.createTextNode(' '));const box=document.createElement('span');box.className='word';const s=document.createElement('span');s.innerHTML=w;box.append(s);ln.append(box);headW.push(s);});$('head').append(ln);});
 const subW=words($('sub'),['Three','moves.','One','plan.']);
-const STEPS=[['STEP ONE','KNOW YOUR<br>NUMBERS.','orange'],['STEP TWO','BUILD YOUR<br>CUSHION.','dark'],['STEP THREE','GROW WITH<br>A PLAN.','orange']];
-const titleW=words($('title'),['THE','FINANCIAL','GUIDE']);
-const soonW=words($('soon'),['COMING','SOON']);
-const urlW=words($('url'),['njsdcapital.com']);
-const footW=words($('foot'),['Scott','Davis','&middot;','Financial','Coaching']);
-const fineW=words($('fine'),['Educational','content,','not','financial','advice.']);
 const front=$('front'), back=$('back');
-function setFace(el,i){el.className='face '+STEPS[i][2];el.querySelector('.k').textContent=STEPS[i][0];el.querySelector('.h').innerHTML=STEPS[i][1];}
-setFace(back,1);
+function setFace(el,k,h,kcol){el.querySelector('.k').textContent=k;el.querySelector('.k').style.color=kcol;el.querySelector('.h').innerHTML=h;}
+setFace(back,'STEP THREE','GROW WITH<br>A PLAN.','#FCE3D6'); back.style.background='#F66733';
+
+// worksheet inside the front face
+const ws=buildWorksheet($('wsHolder'));
+const WS_S=0.95, PAGE_W=ws.W*WS_S, PAGE_H=ws.H*WS_S;
+$('wsHolder').style.transform=`scale(${WS_S})`;
+const probe=document.createElement('div'); probe.id='probe'; ws.pg.append(probe);
+const hand=buildHand($('handLayer'));
+
+const B = {start:0,'kicker.in':0.2,'pill.in':0.45,'head.in':0.7,'sub.in':1.9,'head.up':3.0,'head.upped':3.7,'card.in':3.3,'card.landed':4.1,
+  'head.out':4.6,'card1.text.out':4.6,'ws.grow':4.8,'ws.grown':5.8,'hand.in':5.6,'write.start':6.25};
+B['write.end']=B['write.start']+ws.total; B['hand.out']=B['write.end']+0.15;
+B['ws.shrink']=B['write.end']+0.45; B['ws.shrunk']=B['ws.shrink']+0.9;
+B['card2.text.in']=B['ws.shrunk']-0.1;
+B['flip2']=B['card2.text.in']+1.3; B['flip2.done']=B['flip2']+0.7;
+B['card.text.out']=B['flip2.done']+1.0;
+B['card.morph']=B['card.text.out']+0.2; B['card.round']=B['card.morph']+0.9;
+B['ring.draw']=B['card.morph']+0.6; B['ring.done']=B['ring.draw']+0.6;
+B['art.grow']=B['ring.done']; B['art.full']=B['art.grow']+0.5;
+B['paper.open']=B['art.full']+0.1; B['paper.full']=B['paper.open']+0.9;
+B['emb.move']=B['paper.open']+0.7; B['emb.land']=B['emb.move']+0.8;
+B['logo.reveal']=B['emb.land']; B['logo.revealed']=B['logo.reveal']+0.7;
+B['photo.in']=B['logo.revealed']-0.1; B['title.in']=B['photo.in']+0.9;
+B.end=B['title.in']+3.1;
 
 // geometry
-const CARD_W=900, CARD_H=430, CARD_CY=1120;
-const EMB=520, EU=EMB/404;                      // emblem image box (viewBox 404 units)
-const R_FILL=176*EU, R_RING_OUT=198*EU;
-const LOGO_W=900, LU=LOGO_W/1119, LOGO_X=(W-LOGO_W)/2, LOGO_Y=860-202*LU;
+const CARD_W=900, CARD_H=430, CARD_CY=1120, MID_CY=990;
+const EMB=520, EU=EMB/404, R_FILL=176*EU, R_RING_OUT=198*EU;
+const LOGO_W=900, LU=LOGO_W/1154, LOGO_X=(W-LOGO_W)/2, LOGO_Y=170;
 const END={x:LOGO_X+202*LU, y:LOGO_Y+202*LU, size:404*LU};
+const end=buildEnd($('endLayer'),{logo:{x:LOGO_X,y:LOGO_Y,w:LOGO_W},photo:{cx:CX,cy:880,w:500,h:712},titleY:1272});
 
 const bg=$('bg').getContext('2d');
 function drawBg(t){
   const g=bg.createLinearGradient(1080,0,0,1920); g.addColorStop(0,'#2A3D66'); g.addColorStop(.5,'#1B2A4A'); g.addColorStop(1,'#141F38');
   bg.fillStyle=g; bg.fillRect(0,0,W,H);
-  for(const [ph,r,c,ax,ay] of [[0,700,'rgba(246,103,51,0.10)',320,420],[2.6,800,'rgba(212,175,55,0.07)',380,520]]){
+  for(const [ph,r,c,ax,ay] of [[0,700,'rgba(246,103,51,0.11)',320,420],[2.6,800,'rgba(212,175,55,0.10)',380,520]]){
     const x=CX+Math.cos(t*.23+ph)*ax, y=CY+Math.sin(t*.18+ph)*ay;
     const rg=bg.createRadialGradient(x,y,0,x,y,r); rg.addColorStop(0,c); rg.addColorStop(1,'rgba(27,42,74,0)'); bg.fillStyle=rg; bg.fillRect(0,0,W,H);
   }
 }
+const mix=(a,b,k)=>{const p=s=>[1,3,5].map(i=>parseInt(s.slice(i,i+2),16));const A=p(a),Bc=p(b);return `rgb(${A.map((v,i)=>Math.round(lerp(v,Bc[i],k))).join(',')})`;};
 
 function seek(t){
   drawBg(t);
@@ -141,73 +128,91 @@ function seek(t){
   // top row
   slide(kickW,t,B['kicker.in'],B['head.out'],0.1,0.55);
   const pillOpen=eo(span(t,B['pill.in'],B['pill.in']+0.6)), pillAway=eio(span(t,B['head.out'],B['head.out']+0.5));
-  const pw=430; const pill=$('pill'); pill.style.width=pw+'px'; pill.style.clipPath=`inset(0 0 0 ${(1-pillOpen)*100}% round 12px)`;
-  pill.style.transform=`translateY(${-pillAway*180}px)`;
+  const pill=$('pill'); pill.style.clipPath=`inset(0 0 0 ${(1-pillOpen)*100}% round 12px)`; pill.style.transform=`translateY(${-pillAway*200}px)`;
   slide(pillW,t,B['pill.in']+0.25,null,0.08,0.5);
-  // headline: centre, then rises to the top while the cards take the middle
+  // headline + gold underline under MONEY
   const up=eio(span(t,B['head.up'],B['head.upped']));
-  const head=$('head'); head.style.top=lerp(560,250,up)+'px'; head.style.transform=`scale(${lerp(1,0.62,up)})`;
+  const head=$('head'); const hs=lerp(1,0.62,up), hy=lerp(560,250,up);
+  head.style.top=hy+'px'; head.style.transform=`scale(${hs})`;
   slide(headW,t,B['head.in'],B['head.out'],0.09,0.6);
+  const gl=$('goldline'); const glk=eo(span(t,B['head.in']+0.5,B['head.in']+1.1))*(1-eio(span(t,B['head.out'],B['head.out']+0.4)));
+  const lineW=300*hs; gl.style.width=lineW+"px"; gl.style.left=(CX-lineW/2+128*hs)+"px"; gl.style.top=(hy+ (2*122+6)*hs)+'px'; gl.style.transform=`scaleX(${glk})`; gl.style.height=(8*hs)+'px';
   const sub=$('sub'); sub.style.top='1050px';
   slide(subW,t,B['sub.in'],B['head.up']-0.1,0.07,0.5);
 
-  // card: rises, flips twice (each flip shows the next step), then rounds into the emblem's circle
+  // card: rises, grows into the worksheet, shrinks into step two, flips to step three, rounds into the emblem's circle
   const cin=eo(span(t,B['card.in'],B['card.landed']));
-  const f1=eio(span(t,B.flip1,B['flip1.done'])), f2=eio(span(t,B.flip2,B['flip2.done']));
-  const rot=180*f1+180*f2;
-  setFace(front, rot>270?2:0);
+  const gw=eio(span(t,B['ws.grow'],B['ws.grown'])), sh=eio(span(t,B['ws.shrink'],B['ws.shrunk']));
+  const big=gw*(1-sh);
+  const f2=eio(span(t,B.flip2,B['flip2.done']));
   const morph=eio(span(t,B['card.morph'],B['card.round']));
-  const cw=lerp(CARD_W,2*R_FILL,morph), ch=lerp(CARD_H,2*R_FILL,morph), cr=lerp(28,R_FILL,morph);
-  const ccy=lerp(CARD_CY,CY,morph);
+  let cw=lerp(CARD_W,PAGE_W,big), ch=lerp(CARD_H,PAGE_H,big);
+  cw=lerp(cw,2*R_FILL,morph); ch=lerp(ch,2*R_FILL,morph);
+  const cr=lerp(lerp(28,10,big),R_FILL,morph);
+  const ccy=lerp(lerp(CARD_CY,MID_CY,gw),CY,morph);
   const card=$('card');
   card.style.width=cw+'px'; card.style.height=ch+'px';
-  card.style.transform=`translate(${CX-cw/2}px,${ccy-ch/2+(1-cin)*900}px) rotateX(${rot + (1-cin)*-30}deg) rotateZ(${Math.sin(t*0.7)*0.6*(1-morph)}deg)`;
-  for(const f of [front,back]){f.style.borderRadius=cr+'px'; if(morph>0&&rot>=359){f.style.background='#F66733';}}
+  card.style.transform=`translate(${CX-cw/2}px,${ccy-ch/2+(1-cin)*900}px) rotateX(${180*f2+(1-cin)*-30}deg) rotateZ(${Math.sin(t*0.7)*0.5*(1-morph)*(1-big)}deg)`;
   card.style.display=(t>=B['card.in'] && t<B['art.full'])?'block':'none';
-  // card text leaves before the shape changes
+  front.style.borderRadius=back.style.borderRadius=cr+'px';
+  // front face: orange step one -> page -> dark step two
+  const stepTwo=t>=B['ws.shrink'];
+  front.style.background=stepTwo?mix('#F8F9FA','#111B33',sh):'#F8F9FA';
+  const tint=$('tint'); tint.style.background=stepTwo?'transparent':'#F66733'; tint.style.opacity=stepTwo?0:(1-gw);
+  $('wsHolder').style.display=(t>=B['ws.grow']-0.05 && t<B['ws.shrunk'])?'block':'none';
+  $('wsHolder').style.transform=`translate(${(cw-PAGE_W)/2}px,${(ch-PAGE_H)/2}px) scale(${WS_S})`;
+  front.style.border=stepTwo&&sh>0.6?'3px solid rgba(212,175,55,.85)':'none';
+  front.querySelector('.rule').style.background=stepTwo?'#F66733':'#D4AF37';
+  front.querySelector('.rule').style.opacity=big>0.02?0:1;
+  if(!stepTwo) setFace(front,'STEP ONE','KNOW YOUR<br>NUMBERS.','#FCE3D6'); else setFace(front,'STEP TWO','BUILD YOUR<br>CUSHION.','#F66733');
+  const t1out=eio(span(t,B['card1.text.out'],B['card1.text.out']+0.3));
+  const t2in=eo(span(t,B['card2.text.in'],B['card2.text.in']+0.5));
   const txOut=eio(span(t,B['card.text.out'],B['card.text.out']+0.35));
-  for(const f of [front,back]) for(const el of f.children) el.style.transform=`translateY(${-txOut*60}px)`, el.style.clipPath=`inset(0 0 ${txOut*100}% 0)`;
+  for(const el of [front.querySelector('.k'),front.querySelector('.h')]){
+    const hide=stepTwo?(1-t2in):t1out; el.style.transform=`translateY(${hide*-60}px)`; el.style.clipPath=`inset(0 0 ${hide*100}% 0)`;
+    el.style.display=(big>0.02)?'none':'block';
+  }
+  for(const el of [back.querySelector('.k'),back.querySelector('.h')]){ el.style.transform=`translateY(${-txOut*60}px)`; el.style.clipPath=`inset(0 0 ${txOut*100}% 0)`; }
+  back.querySelector('.rule').style.opacity=1-morph;
 
-  // gold ring draws around the circle, then the emblem art grows out from the centre
+  // the hand writes into the worksheet
+  const wu=t-B['write.start'];
+  const st=ws.write(Math.max(-1,wu));
+  const handIn=eo(span(t,B['hand.in'],B['write.start'])), handOut=eio(span(t,B['hand.out'],B['hand.out']+0.55));
+  const showHand=t>=B['hand.in'] && t<B['hand.out']+0.6;
+  hand.style.display=showHand?'block':'none';
+  if(showHand && st.pen){
+    probe.style.left=st.pen.x+'px'; probe.style.top=st.pen.y+'px';
+    const r=probe.getBoundingClientRect(), sr=$('stage').getBoundingClientRect();
+    const wsc=parseFloat(getComputedStyle($('world')).transform.split('(')[1])||1;
+    let px=r.left-sr.left, py=r.top-sr.top; px=CX+(px-CX)/wsc; py=CY+(py-CY)/wsc;
+    const offX=(1-handIn)*520+handOut*560, offY=(1-handIn)*620+handOut*640;
+    hand.style.transform=`translate(${px+offX}px,${py+offY+(st.down?0:-10)}px) scale(0.62) rotate(${Math.sin(t*3.1)*1.5}deg)`;
+  }
+
+  // gold ring draws, emblem art grows out, paper opens, emblem glides to the primary logo
   const ringK=eo(span(t,B['ring.draw'],B['ring.done']));
-  const ring=$('ring');
-  const ringVisible=t>=B['ring.draw'] && t<B['art.full'];
-  ring.style.display=ringVisible?'block':'none';
+  const ring=$('ring'); ring.style.display=(t>=B['ring.draw'] && t<B['art.full'])?'block':'none';
   ring.style.left=(CX-R_RING_OUT)+'px'; ring.style.top=(CY-R_RING_OUT)+'px'; ring.style.width=ring.style.height=2*R_RING_OUT+'px';
   const deg=360*ringK;
   ring.style.background=`conic-gradient(from -90deg, #D4AF37 0deg ${deg}deg, transparent ${deg}deg 360deg)`;
   ring.style.webkitMask=ring.style.mask=`radial-gradient(circle, transparent ${R_FILL-0.5}px, #000 ${R_FILL}px)`;
-  // emblem image
   const mv=eio(span(t,B['emb.move'],B['emb.land']));
   const es=lerp(EMB,END.size,mv), ex=lerp(CX,END.x,mv), ey=lerp(CY,END.y,mv);
   const emb=$('emb'); emb.style.width=emb.style.height=es+'px'; emb.style.left=(ex-es/2)+'px'; emb.style.top=(ey-es/2)+'px';
   const grow=eo(span(t,B['art.grow'],B['art.full']));
   emb.style.display=(t>=B['art.grow'] && t<B['emb.land'])?'block':'none';
-  emb.style.clipPath=t<B['art.full']?`circle(${lerp(R_FILL/EMB*100*0.0, 50, grow)}% at 50% 50%)`:'none';
-  // under the growing art the card (orange circle) and ring stay, so the art appears on its own disc
-  // paper: an off-white circle opens out from behind the emblem until it is the whole frame
+  emb.style.clipPath=t<B['art.full']?`circle(${lerp(0,50,grow)}% at 50% 50%)`:'none';
   const po=eio(span(t,B['paper.open'],B['paper.full']));
   const paper=$('paper'); paper.style.display=t>=B['paper.open']?'block':'none';
   paper.style.clipPath=`circle(${lerp(R_RING_OUT,2300,po)}px at ${ex}px ${ey}px)`;
-  // logo: lands under the moving emblem at exactly its emblem, then the wordmark slides out from behind
-  const logo=$('logo'); logo.style.width=LOGO_W+'px'; logo.style.left=LOGO_X+'px'; logo.style.top=LOGO_Y+'px';
-  logo.style.display=t>=B['emb.land']?'block':'none';
-  const rv=eo(span(t,B['logo.reveal'],B['logo.revealed']));
-  logo.style.clipPath=`inset(0 ${(1-404/1119)*100*(1-rv)}% 0 0)`;
-  // end text
-  $('title').style.top='1110px'; $('soon').style.top='1250px'; $('url').style.top='1320px';
-  slide(titleW,t,B['title.in'],null,0.12,0.6);
-  slide(soonW,t,B['title.in']+0.45,null,0.1,0.5);
-  slide(urlW,t,B['title.in']+0.75,null,0.1,0.5);
-  $('rule').style.transform=`scaleX(${eo(span(t,B['title.in']+0.6,B['title.in']+1.4))})`;
-  $('rule').style.display=t>B['title.in']?'block':'none';
-  slide(footW,t,B['title.in']+0.9,null,0.04,0.45);
-  slide(fineW,t,B['title.in']+1.05,null,0.03,0.45);
+
+  end.seek(t,{reveal:B['logo.reveal'],revealed:B['logo.revealed'],photo:B['photo.in'],title:B['title.in'],end:B.end});
 }
-window.ad={duration:B.end,width:W,height:H,events:B,seek,ready:Promise.all([document.fonts.ready,...[...document.images].map(i=>i.decode().catch(()=>{}))])};
+window.ad={duration:B.end,width:W,height:H,events:B,seek,ready:Promise.all([document.fonts.ready,...[...document.images].map(i=>i.decode().catch(()=>{}))]).then(()=>ws.measure())};
 const held=new URLSearchParams(location.search).get('t');
 if(held!==null) window.ad.ready.then(()=>seek(Number(held)));
-else if(!navigator.webdriver){const t0=performance.now();(function loop(){seek(((performance.now()-t0)/1000)%B.end);requestAnimationFrame(loop);})();}
+else if(!navigator.webdriver){window.ad.ready.then(()=>{const t0=performance.now();(function loop(){seek(((performance.now()-t0)/1000)%B.end);requestAnimationFrame(loop);})();});}
 else seek(0);
 </script>
 </body>
