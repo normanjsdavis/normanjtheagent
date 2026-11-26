@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@1.14.0",
+        "--headless",
+        "--isolated",
+        "--no-usage-statistics",
+        "--executablePath=/opt/pw-browsers/chromium",
+        "--chromeArg=--no-sandbox"
+      ]
+    }
+  }
+}
