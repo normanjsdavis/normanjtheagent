@@ -1,0 +1,22 @@
+{
+ "start": 0,
+ "coin.land": 1.4,
+ "coin.flip": 2,
+ "coin.flipped": 3,
+ "cover.grow": 3.5,
+ "cover.grown": 4.7,
+ "title.in": 4.6,
+ "kicker.in": 5.3,
+ "cover.open": 7.4,
+ "cover.opened": 8.6,
+ "list.in": 8.5,
+ "list.out": 10.9,
+ "cover.close": 11.3,
+ "cover.closed": 12.2,
+ "emblem.fly": 12.2,
+ "emblem.land": 13.2,
+ "logo.reveal": 13.2,
+ "logo.revealed": 14,
+ "soon.in": 14,
+ "end": 16
+}

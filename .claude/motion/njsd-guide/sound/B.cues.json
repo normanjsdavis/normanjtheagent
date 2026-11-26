@@ -1,0 +1,134 @@
+{
+ "length": "end",
+ "music": {
+  "file": "kit/pad.wav",
+  "gain_db": 0,
+  "fade_in": 0.6,
+  "fade_out": 3.2,
+  "levels": [
+   [
+    0,
+    -2
+   ],
+   [
+    "card.morph",
+    0
+   ],
+   [
+    "logo.reveal",
+    2
+   ],
+   [
+    12.4,
+    2
+   ],
+   [
+    14.1,
+    -40
+   ]
+  ]
+ },
+ "effects": [
+  {
+   "file": "kit/room.wav",
+   "at": 0,
+   "until": 14.4,
+   "gain_db": -30,
+   "fade_in": 0.4,
+   "fade_out": 1.8
+  },
+  {
+   "file": "kit/blip.wav",
+   "at": "pill.in",
+   "gain_db": -17
+  },
+  {
+   "file": "kit/soft-thud.wav",
+   "at": "head.in",
+   "shift": 0.35,
+   "align": "peak",
+   "gain_db": -11,
+   "low_cut": 40
+  },
+  {
+   "file": "kit/air-pass-slow.wav",
+   "at": "head.up",
+   "gain_db": -17,
+   "speed": 1.2
+  },
+  {
+   "file": "kit/air-pass-fast.wav",
+   "at": "card.in",
+   "gain_db": -13
+  },
+  {
+   "file": "kit/tick.wav",
+   "at": "card.landed",
+   "gain_db": -19
+  },
+  {
+   "file": "kit/grain-rustle-1.wav",
+   "at": "flip1",
+   "gain_db": -14,
+   "low_cut": 120,
+   "high_cut": 5500
+  },
+  {
+   "file": "kit/grain-rustle-2.wav",
+   "at": "flip2",
+   "gain_db": -14,
+   "speed": 1.06,
+   "low_cut": 120,
+   "high_cut": 5500
+  },
+  {
+   "file": "kit/air-pass-slow.wav",
+   "at": "card.morph",
+   "gain_db": -15
+  },
+  {
+   "file": "kit/tick.wav",
+   "at": "ring.draw",
+   "gain_db": -20,
+   "speed": 0.92
+  },
+  {
+   "file": "kit/rise.wav",
+   "at": "art.grow",
+   "align": "end",
+   "gain_db": -13
+  },
+  {
+   "file": "kit/soft-thud.wav",
+   "at": "art.grow",
+   "align": "peak",
+   "gain_db": -8,
+   "low_cut": 40,
+   "speed": 0.94
+  },
+  {
+   "file": "kit/air-pass-fast.wav",
+   "at": "paper.open",
+   "gain_db": -13,
+   "speed": 0.9
+  },
+  {
+   "file": "kit/grain-rustle-3.wav",
+   "at": "emb.move",
+   "gain_db": -17
+  },
+  {
+   "file": "kit/sub-swell.wav",
+   "at": "logo.reveal",
+   "gain_db": -11,
+   "fade_out": 1.6,
+   "until": 14.4
+  },
+  {
+   "file": "kit/blip.wav",
+   "at": "title.in",
+   "gain_db": -19,
+   "speed": 0.9
+  }
+ ]
+}

@@ -1,0 +1,131 @@
+{
+ "length": "end",
+ "music": {
+  "file": "kit/pad.wav",
+  "gain_db": 0,
+  "fade_in": 0.8,
+  "fade_out": 3.2,
+  "levels": [
+   [
+    0,
+    -3
+   ],
+   [
+    "cover.open",
+    0
+   ],
+   [
+    "logo.reveal",
+    2
+   ],
+   [
+    13.4,
+    2
+   ],
+   [
+    15.1,
+    -40
+   ]
+  ]
+ },
+ "effects": [
+  {
+   "file": "kit/room.wav",
+   "at": 0,
+   "until": 15.4,
+   "gain_db": -30,
+   "fade_in": 0.4,
+   "fade_out": 1.8
+  },
+  {
+   "file": "kit/air-pass-slow.wav",
+   "at": "start",
+   "gain_db": -11
+  },
+  {
+   "file": "kit/soft-thud.wav",
+   "at": "coin.land",
+   "align": "peak",
+   "gain_db": -9,
+   "low_cut": 40
+  },
+  {
+   "file": "kit/air-pass-fast.wav",
+   "at": "coin.flip",
+   "shift": 0.1,
+   "gain_db": -13
+  },
+  {
+   "file": "kit/blip.wav",
+   "at": "coin.flipped",
+   "gain_db": -16
+  },
+  {
+   "file": "kit/grain-rustle-1.wav",
+   "at": "cover.grow",
+   "gain_db": -17,
+   "speed": 0.95
+  },
+  {
+   "file": "kit/tick.wav",
+   "at": "title.in",
+   "shift": 0.15,
+   "gain_db": -20
+  },
+  {
+   "file": "kit/grain-rustle-2.wav",
+   "at": "cover.open",
+   "gain_db": -14,
+   "low_cut": 120,
+   "high_cut": 5000
+  },
+  {
+   "file": "kit/tick.wav",
+   "at": "list.in",
+   "shift": 0.2,
+   "gain_db": -21,
+   "speed": 1.08
+  },
+  {
+   "file": "kit/grain-rustle-3.wav",
+   "at": "cover.close",
+   "gain_db": -15,
+   "speed": 0.9,
+   "low_cut": 120,
+   "high_cut": 5000
+  },
+  {
+   "file": "kit/air-pass-slow.wav",
+   "at": "emblem.fly",
+   "gain_db": -14,
+   "speed": 1.15
+  },
+  {
+   "file": "kit/rise.wav",
+   "at": "logo.reveal",
+   "align": "end",
+   "gain_db": -13
+  },
+  {
+   "file": "kit/soft-thud.wav",
+   "at": "logo.reveal",
+   "align": "peak",
+   "gain_db": -7,
+   "low_cut": 40,
+   "speed": 0.92
+  },
+  {
+   "file": "kit/sub-swell.wav",
+   "at": "logo.reveal",
+   "gain_db": -11,
+   "fade_out": 1.6,
+   "until": 15.4
+  },
+  {
+   "file": "kit/blip.wav",
+   "at": "soon.in",
+   "gain_db": -19,
+   "speed": 0.9
+  }
+ ]
+}

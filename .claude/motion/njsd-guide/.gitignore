@@ -1,0 +1,9 @@
+# intermediates (rebuildable): silent renders, check stills, raw mixes/stems
+out/*_silent.mp4
+out/a-check/
+out/b-check/
+sound/*.mix*.wav
+sound/*.master.wav
+sound/*.master.mp4
+sound/kit/
+storyboard/*/render/
