@@ -125,6 +125,7 @@ Read `references/style-and-meta-prompting.md`. It covers the reverse-engineer pa
 | `references/checks.md` | The full review list |
 | `references/honesty.md` | Spec-ad labels, real assets, people and likeness |
 | `references/real-estate.md` | Local add-on: listing promos, market graphics, SC/fair-housing guardrails |
+| `references/njsd-capital.md` | Local add-on: NJSD Capital / Scott Davis Ventures brand, photo, worksheet + writing-hand pieces |
 | `templates/storyboard.html` | The storyboard page |
 | `templates/ad-page.html` | A starter page for code-built motion |
 | `scripts/` | Tools. Each one explains itself with `--help` |
@@ -156,6 +157,10 @@ The Python scripts need Python 3.9+ with `numpy` and `Pillow` (`ink_morph.py` al
 ## Real estate
 
 For a property, listing, market update or agent-brand piece, read `references/real-estate.md` first (local add-on).
+
+## NJSD Capital
+
+For NJSD Capital LLC, Scott Davis Ventures or financial-coaching pieces, read `references/njsd-capital.md` first (local add-on).
 
 ## Reporting back
 
