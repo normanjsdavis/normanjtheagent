@@ -91,3 +91,8 @@ They use other tools or are off-niche.
 ## Free Gumroad packs worth downloading (all $0+)
 1. claude-motion-graphics-pack · 2. ai-youtube-course · 3. claude-second-brain ·
 4. claude-trader-kit (education only) · 5. npwws (Claude Ads Resources) · 6. rea-resources
+
+## Part 3: Hermes deep review
+See `HERMES-PLAYBOOK.md`: setup, profiles, Telegram topics, cron jobs, /goal, an 11-build map for
+real estate and NJSD Capital, ready-to-paste prompts, guardrails, and his offer and price menu.
+Full transcripts: `8yE6G1Lup1s-hermes-full-course-transcript.txt`, `uED-1uD563Y-hermes-8-use-cases-transcript.txt`.
